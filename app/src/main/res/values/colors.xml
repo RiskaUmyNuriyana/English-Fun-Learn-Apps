@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#358FFF</color>
+    <color name="colorPrimaryDark">#3686E9</color>
+    <color name="colorAccent">#358FFF</color>
+
+    <color name="bgActivity">#F6F6F6</color>
+
+    <color name="black72">#727272</color>
+    <color name="blackA0">#A0A0A0</color>
+
+    <color name="white">#ffffff</color>
+    <color name="whiteShadow">#60D9D9D9</color>
+
+    <color name="blue">#49CFFF</color>
+    <color name="blueShadow">#6070CDEE</color>
+</resources>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/bgActivity"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/bg_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_toolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"/>
+
+        <TextView
+            android:text="English for Fun"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:orientation="vertical"
+        android:layout_below="@id/bg_toolbar"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:background="@drawable/bg_smooth_blue_round_8dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_weight="2"
+                android:layout_marginRight="16dp"
+                app:srcCompat="@drawable/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Welcome to"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="English for Fun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnAlphabet"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image1"
+                    app:srcCompat="@drawable/ic_alphabet"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image1"
+                    android:text="Alphabet"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnMath"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image2"
+                    app:srcCompat="@drawable/ic_math"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image2"
+                    android:text="Math"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnAnimals"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image3"
+                    app:srcCompat="@drawable/ic_animals"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image3"
+                    android:text="Animals"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnTransportation"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image4"
+                    app:srcCompat="@drawable/ic_car"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image4"
+                    android:text="Transportation"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnFamily"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image5"
+                    app:srcCompat="@drawable/ic_family"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image5"
+                    android:text="My Family"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnFruit"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image6"
+                    app:srcCompat="@drawable/ic_fruit"
+                    app:layout_widthPercent="42%"
+                    app:layout_heightPercent="42%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image6"
+                    android:text="Fruit and Vegetables"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnMiniGames"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image7"
+                    app:srcCompat="@drawable/ic_console"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image7"
+                    android:text="Mini Games"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnSettings"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image8"
+                    app:srcCompat="@drawable/ic_setting"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image8"
+                    android:text="Setting"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/btnAbout"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/image9"
+                    app:srcCompat="@drawable/ic_about"
+                    app:layout_widthPercent="46%"
+                    app:layout_heightPercent="46%"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/image9"
+                    android:text="About"
+                    app:layout_widthPercent="80%"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black72"
+            android:text="Happy Learn English with English for Fun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>
