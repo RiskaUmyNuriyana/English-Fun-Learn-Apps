@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SubMenuActivity" />
-        <activity android:name=".LearnActivity"></activity>
+        <activity android:name=".LearnActivity" />
+        <activity android:name=".LearnSwipeActivity"></activity>
     </application>
 
 </manifest>

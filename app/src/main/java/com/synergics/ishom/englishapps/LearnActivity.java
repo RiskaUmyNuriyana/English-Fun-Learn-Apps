@@ -1,11 +1,15 @@
 package com.synergics.ishom.englishapps;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.synergics.ishom.englishapps.Model.Learn;
@@ -51,6 +55,10 @@ public class LearnActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(View view) {
 
+                                                Intent intent = new Intent(getApplicationContext(), LearnSwipeActivity.class);
+                                                intent.putExtra("id", data.getPostiion());
+                                                startActivity(intent);
+
                                             }
                                         });
                                     }
@@ -60,22 +68,39 @@ public class LearnActivity extends AppCompatActivity {
                 .attachTo(recyclerView);
 
         setData();
+        setToolbar();
     }
 
     private void setData() {
 
-        items.add(new Learn("1", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("2", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("3", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("4", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("5", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("6", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("7", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("8", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn("9", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(0,"1", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(1,"2", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(2,"3", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(3,"4", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(4,"5", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(5,"6", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(6,"7", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(7,"8", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        items.add(new Learn(8,"9", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
 
         adapter.updateData(items);
         adapter.notifyDataSetChanged();
+    }
 
+    private void setToolbar() {
+        Toolbar toolbar = this.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Learn");
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

@@ -2,6 +2,7 @@ package com.synergics.ishom.englishapps.Model;
 
 public class Learn {
 
+    private int postiion;
     private String id;
     private String english;
     private String pronounce;
@@ -9,13 +10,22 @@ public class Learn {
     private String image;
     private String audio;
 
-    public Learn(String id, String english, String pronounce, String indo, String image, String audio) {
+    public Learn(int position, String id, String english, String pronounce, String indo, String image, String audio) {
+        this.postiion = position;
         this.id = id;
         this.english = english;
         this.pronounce = pronounce;
         this.indo = indo;
         this.image = image;
         this.audio = audio;
+    }
+
+    public int getPostiion() {
+        return postiion;
+    }
+
+    public void setPostiion(int postiion) {
+        this.postiion = postiion;
     }
 
     public String getId() {
