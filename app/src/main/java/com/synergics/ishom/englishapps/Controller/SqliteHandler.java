@@ -184,10 +184,10 @@ public class SqliteHandler extends SQLiteOpenHelper {
             int jumalahYangBelumDimainkan = cursor2.getCount();
             int total = jumalahYangBelumDimainkan + jumlahDimainkan;
 
-            float percent = (jumlahDimainkan * 100) / total;
+            float percent = 0f;
 
             if (total != 0){
-                min = (jumlahDimainkan / total) * 100;
+                percent =(jumlahDimainkan * 100) / total;
             }
 
             min = jumlahDimainkan;
