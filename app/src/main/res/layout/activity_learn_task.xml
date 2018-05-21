@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgActivity"
+    tools:context=".LearnTaskActivity">
+
+    <RelativeLayout
+        android:id="@+id/bg_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_toolbar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ToolbarStyle" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Learn Task"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/bg_white_round_8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_below="@id/bg_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"/>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_round_8dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="18dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/number"
+            android:text="Task Number : 1"
+            android:textColor="@color/black34"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/content2"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bg_hp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/image"
+                android:visibility="visible"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/bg_hp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+
+            <LinearLayout
+                android:id="@+id/btnPlay"
+                android:paddingTop="12dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingBottom="16dp"
+                android:background="@drawable/bg_dark_blue_round_8dp"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Play Audio"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/white"
+                    android:layout_height="16dp" />
+
+                <ImageView
+                    android:layout_marginLeft="4dp"
+                    app:srcCompat="@drawable/ic_play"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/soal"
+            android:text="Soal ?"
+            android:textColor="@color/black34"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 1" />
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 2" />
+
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 3" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnBefore"
+                android:layout_weight="1"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/bg_dark_blue_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnAfter"
+                android:layout_weight="1"
+                android:text="NEXT"
+                android:textColor="@color/white"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_dark_blue_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

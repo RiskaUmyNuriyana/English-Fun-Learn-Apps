@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:background="@drawable/bg_white_round_8dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="How to Play ?"
+            android:gravity="center"
+            android:paddingBottom="32dp"
+            android:paddingTop="18dp"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_blue_round_8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+
+        <LinearLayout
+            android:id="@+id/recycle"
+            android:background="@color/white"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2">
+
+            <TextView
+                android:text="How to play mini games ?
+1. Tersedia blalalablalallaa
+2. asdasdasdasdasdsadasdasdasd
+3. asdasdefeajeaigjiaejiak"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnUndestand"
+                android:layout_marginTop="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:paddingBottom="6dp"
+                android:text="Yes, I am Understand !"
+                android:background="@drawable/bg_dark_blue_round_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

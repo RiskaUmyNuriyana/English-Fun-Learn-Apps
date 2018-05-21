@@ -1,5 +1,6 @@
 package com.synergics.ishom.englishapps;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,8 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.synergics.ishom.englishapps.Controller.RestFullConfig.ApiClient;
+import com.synergics.ishom.englishapps.Controller.RestFullConfig.ApiInterface;
 import com.synergics.ishom.englishapps.Model.Learn;
 
 import net.idik.lib.slimadapter.SlimAdapter;
@@ -20,6 +24,10 @@ import net.idik.lib.slimadapter.viewinjector.IViewInjector;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LearnActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -27,10 +35,16 @@ public class LearnActivity extends AppCompatActivity {
     private GridLayoutManager manager;
     private ArrayList<Object> items = new ArrayList<>();
 
+    private Bundle bundle;
+    private String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn);
+
+        bundle = getIntent().getExtras();
+        id = bundle.getString("id");
 
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
@@ -56,7 +70,8 @@ public class LearnActivity extends AppCompatActivity {
                                             public void onClick(View view) {
 
                                                 Intent intent = new Intent(getApplicationContext(), LearnSwipeActivity.class);
-                                                intent.putExtra("id", data.getPostiion());
+                                                intent.putExtra("position", data.getPostiion());
+                                                intent.putExtra("id", id);
                                                 startActivity(intent);
 
                                             }
@@ -72,19 +87,43 @@ public class LearnActivity extends AppCompatActivity {
     }
 
     private void setData() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading....");
+        progressDialog.show();
 
-        items.add(new Learn(0,"1", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(1,"2", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(2,"3", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(3,"4", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(4,"5", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(5,"6", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(6,"7", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(7,"8", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
-        items.add(new Learn(8,"9", "English", "/english/", "Inggris", "https://yt3.ggpht.com/a-/AJLlDp1UE5tJ0OoMR6zrd439x4og5YhOYiQRS8Gz-w=s900-mo-c-c0xffffffff-rj-k-no", ""));
+        ApiInterface apiInterface = ApiClient.EnglishApi().create(ApiInterface.class);
+        Call call = apiInterface.getLearn(id);
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
 
-        adapter.updateData(items);
-        adapter.notifyDataSetChanged();
+                if (response.isSuccessful()){
+                    com.synergics.ishom.englishapps.Model.RestFullObject.Learn object = (com.synergics.ishom.englishapps.Model.RestFullObject.Learn) response.body();
+
+                    if (object.status){
+                        int i = 0;
+                        for (com.synergics.ishom.englishapps.Model.RestFullObject.Learn.Data data : object.data){
+                            items.add(new Learn(i, data.id, data.name_english, data.pronounce, data.name_indo, data.image, data.audio));
+                            i++;
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(), object.message, Toast.LENGTH_SHORT).show();
+                    }
+
+                    adapter.updateData(items);
+                    adapter.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Failed to access server", Toast.LENGTH_SHORT).show();
+                }
+
+                progressDialog.hide();
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
     }
 
     private void setToolbar() {

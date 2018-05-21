@@ -22,7 +22,13 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SubMenuActivity" />
         <activity android:name=".LearnActivity" />
-        <activity android:name=".LearnSwipeActivity"></activity>
+        <activity android:name=".LearnSwipeActivity" />
+        <activity android:name=".MiniGamesActivity" />
+        <activity android:name=".HangManActivity" />
+        <activity
+            android:name=".VideoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".LearnTaskActivity"></activity>
     </application>
 
 </manifest>

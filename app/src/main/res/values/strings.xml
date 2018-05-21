@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">EnglishApps</string>
+
+    <string name="aphabet">Alphabet</string>
+    <string name="aphabet_caption">Lets play the word guess about alphabet</string>
+
+    <string name="math">Math</string>
+    <string name="math_caption">Lets play the word guess about math and operation</string>
+
+    <string name="animals">Animals</string>
+    <string name="animals_caption">Lets play the word guess about animals</string>
+
+    <string name="transportation">Transportation</string>
+    <string name="transportation_caption">Lets play the word guess about transportation</string>
+
+    <string name="family">My Family</string>
+    <string name="family_caption">Lets play the word guess about family</string>
+
+    <string name="fruit">Fruit and Vegetable</string>
+    <string name="fruit_caption">Lets play the word guess about fruit and vegetable</string>
+
 </resources>

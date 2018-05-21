@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:background="@drawable/bg_white_round_8dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Your answer is right !"
+            android:gravity="center"
+            android:paddingBottom="32dp"
+            android:paddingTop="18dp"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_blue_round_8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+
+        <LinearLayout
+            android:id="@+id/recycle"
+            android:background="@color/white"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
+            android:paddingRight="16dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2">
+
+            <TextView
+                android:text="Answer is : "
+                android:textSize="14dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/bg_hp"
+                android:layout_margin="6dp"
+                android:layout_height="88dp"
+                android:layout_width="88dp"
+                />
+
+            <TextView
+                android:id="@+id/answer"
+                android:text="ANSWER_QUESTION"
+                android:textSize="16dp"
+                android:textColor="@color/black34"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:text="Back to Menu"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/bg_dark_blue_round_8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/white"
+                    android:text="Next Question"
+                    android:background="@drawable/bg_dark_blue_round_8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

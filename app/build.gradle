@@ -32,32 +32,22 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:percent:26.1.0'
-
     implementation 'com.google.android.gms:play-services:12.0.1'
     implementation 'com.google.android.gms:play-services-location:12.0.1'
     implementation 'com.google.android.gms:play-services-places:12.0.1'
     implementation 'com.google.android.gms:play-services-vision:12.0.1'
-
-//    implementation 'com.google.cloud:google-cloud-vision:1.24.1'
+    //    implementation 'com.google.cloud:google-cloud-vision:1.24.1'
     implementation 'me.philio:pinentryview:1.0.6'
-
-
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
     implementation 'net.idik:slimadapter:2.1.2'
-
     implementation 'pl.bclogic:pulsator4droid:1.0.3'
-
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
-
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.makeramen:roundedimageview:2.3.0'
-
-
+    implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
     implementation 'com.karumi:dexter:4.1.0'
     implementation 'com.yarolegovich:discrete-scrollview:1.3.2'
-
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -66,8 +56,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
     implementation 'com.facebook.stetho:stetho:1.4.2'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.4.2'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('/Volumes/Ishom/Android Gradle/untitled folder/libs/YouTubeAndroidPlayerApi.jar')
 }

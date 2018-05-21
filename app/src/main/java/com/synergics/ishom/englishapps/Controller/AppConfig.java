@@ -1,7 +1,7 @@
 package com.synergics.ishom.englishapps.Controller;
 
 public class AppConfig {
-    public static String url = "10.10.5.37";
+    public static String url = "http://pens.ardihikaru.com/2017/wsim/grup4/";
     public static String imageurl = "http://"+ url +"/papward/web/";
 
     // ==================== set id menu ====================
@@ -22,5 +22,5 @@ public class AppConfig {
     public static String textFamily  = "Family";
 
     public static String idFruit  = "6";
-    public static String textFruit  = "Fruit";
+    public static String textFruit  = "Fruit and Vegetables";
 }

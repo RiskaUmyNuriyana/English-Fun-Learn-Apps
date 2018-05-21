@@ -37,6 +37,25 @@ public class SubMenuActivity extends AppCompatActivity {
             }
         });
 
+        btnLearnVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
+            }
+        });
+
+        btnPractice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LearnTaskActivity.class);
+                intent.putExtra("id", id);
+                intent.putExtra("nama", bundle.getString("nama"));
+                startActivity(intent);
+            }
+        });
+
         setToolbar();
     }
 

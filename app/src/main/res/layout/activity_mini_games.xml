@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/bgActivity"
+    android:layout_height="match_parent"
+    tools:context=".MiniGamesActivity">
+
+    <RelativeLayout
+        android:id="@+id/bg_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_toolbar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ToolbarStyle" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Select a category"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/bg_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:paddingRight="24dp"
+            android:paddingLeft="24dp"
+            android:paddingBottom="12dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/btnHowToPlay"-->
+                <!--android:background="@drawable/bg_blue_round_8dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:paddingLeft="24dp"-->
+                <!--android:paddingRight="24dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingTop="16dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:paddingBottom="16dp"-->
+                <!--android:gravity="center"-->
+                <!--android:clickable="true"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<LinearLayout-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:text="How to Play"-->
+                        <!--android:textSize="20dp"-->
+                        <!--android:layout_marginRight="12dp"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                    <!--<ImageView-->
+                        <!--app:srcCompat="@drawable/ic_help"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/btnAlphabet"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_alphabet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/aphabet"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/aphabet_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesAlphabet"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesAlphabet"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnMath"
+                android:layout_below="@id/btnAlphabet"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="18dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_math"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/math"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/math_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesMath"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesMath"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAnimals"
+                android:layout_below="@id/btnMath"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="18dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_animals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/animals"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/animals_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesAnimals"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesAnimals"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnTransportation"
+                android:layout_below="@id/btnAnimals"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="18dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/transportation"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/transportation_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesTransportation"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesTransportation"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnFamily"
+                android:layout_below="@id/btnTransportation"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="18dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_family"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/family"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/family_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesFamily"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesFamily"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnFruit"
+                android:layout_below="@id/btnFamily"
+                android:background="@drawable/bg_white_round_8dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="18dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="18dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                app:layout_heightPercent="24%">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_fruit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/fruit"
+                        android:textSize="20dp"
+                        android:textColor="@color/black72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/fruit_caption"
+                        android:textSize="12dp"
+                        android:textColor="@color/blackA0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                            android:layout_weight="1"
+                            android:id="@+id/prosesFruit"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:rcProgress="0"
+                            app:rcMax="100"
+                            app:rcRadius="12dp"
+                            app:rcBackgroundPadding="4dp"
+                            app:rcReverse="false"
+                            android:layout_marginRight="8dp"
+                            app:rcProgressColor="@color/blue"
+                            app:rcBackgroundColor="@color/whiteShadow" />
+
+                        <TextView
+                            android:id="@+id/textProsesFruit"
+                            android:text="0%"
+                            android:gravity="left"
+                            android:textColor="@color/blue"
+                            android:layout_width="34dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
